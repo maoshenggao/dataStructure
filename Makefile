@@ -10,13 +10,13 @@ EXEC=output.exe
 #start，表示开始执行，冒号后面的$(OBJS)表示要生成最终可执行文件，需要依赖那些.o文件的
 start:$(OBJS)
         #相当于执行：g++ -o maincpp .o文件列表，-o表示生成的目标文件
-        $(CC) -g -o $(EXEC) $(OBJS)
+    $(CC) -g -o $(EXEC) $(OBJS)
 #表示我的.o文件来自于.cpp文件
 .cpp.o:
-        $(CC) -o $@ -c $< -DMYLINUX
+    $(CC) -o $@ -c $< -DMYLINUX
 
 #执行make clean指令
 clean:
         #执行make clean指令时，需要执行的操作，比如下面的指令时指删除所有.o文件
-        rm -rf $(OBJS)
+    rm -rf $(OBJS)
 
